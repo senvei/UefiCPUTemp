@@ -1,0 +1,26 @@
+[Defines]
+	INF_VERSION		= 0x00010019
+	BASE_NAME		= cputemp
+	FILE_GUID		= 71c33bbc-379e-11f1-ab93-27d33e1c102e
+	MODULE_TYPE		= UEFI_APPLICATION
+	VERSION_STRING	= 0.1
+	ENTRY_POINT		= ShellCEntryLib
+[Sources]
+	cputemp.c
+	Cpuid.h
+
+[Packages]
+	MdePkg/MdePkg.dec
+	ShellPkg/ShellPkg.dec
+
+[LibraryClasses]
+	UefiLib
+	ShellCEntryLib
+	BaseMemoryLib
+	IoLib
+	PciCf8Lib
+	
+[Protocols]
+	gEfiLoadedImageProtocolGuid
+
+[BuildOptions]
